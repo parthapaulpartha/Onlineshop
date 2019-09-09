@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <!-- start card -->
+    <div class="container">
+            <div style="margin-top:20px"></div>
+            <center>
+                <div class="row">
+                    {% for ehp in e_head_phones %}
+                    <div class="col">
+                        <div class="card" style="width: 15.9rem;">
+                          <img src="{{ ehp.image.url }}" class="card-img-top" style="height:200px" alt="width:90%;">
+                            <h5 class="card-title"><strong> Code: hp0{{ ehp.id }}</strong></h5>
+                            <a href="/onlineshop/order/" class="btn btn-dark">Order Now ( {{ ehp.price }} )</a>
+                        </div><br>
+                    </div>
+                    {% endfor %}
+                </div>
+            </center>
+        </div>
+        <!-- End card -->
+{% endblock %}

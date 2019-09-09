@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+{% load staticfiles %}
+<style>
+    .parallax{
+     background: url('{% static 'images/online.jpg' %}') no-repeat ;
+     background-size: cover;
+     background-attachment: fixed;
+     height: 400px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <div class="bd-example">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+
+                <div class="carousel-inner">
+                {% for images in slider_image %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{{ images.image.url }}" class="d-block" style="height: 350px; width: 100%" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ images.title }}</h5>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <!-- End slider -->
+
+    <div class="container">
+        <div style="margin-top:20px"></div>
+        <img src="{% static 'images/man1.jpg'%}" style="height:300px;width: 293px">
+        <img src="{% static 'images/electronics.jpeg'%}" style="height:400px; width: 513px">
+        <img src="{% static 'images/women1.jpg'%}" style="height:300px;width: 294px"><br>
+
+        <img src="{% static 'images/watch.jpg'%}" style="height:250px;width: 292px">
+        <img src="{% static 'images/boy1.jpg'%}" style="height:250px;width: 255px">
+        <img src="{% static 'images/girl1.jpg'%}" style="height:250px;width: 255px">
+        <img src="{% static 'images/gift.jpg'%}" style="height:250px;width: 292px">
+    </div>
+
+    <!--start For man -->
+    <div class="container">
+        <div style="margin-top:20px"></div>
+        <h2><center><i>Man</i></center></h2>
+        <img src="{% static 'images/man/m1.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/man/m2.jpeg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/man/m3.png'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/man/m4.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/man/m5.jpeg'%}" style="height:250px;width: 220px">
+    </div>
+    <!-- End -->
+
+    <!--start For Woman -->
+    <div class="container">
+        <div style="margin-top:20px"></div>
+        <h2><center><i>Woman</i></center></h2>
+        <img src="{% static 'images/woman/w1.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/woman/w2.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/woman/w3.png'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/woman/w4.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/woman/w5.jpg'%}" style="height:250px;width: 220px">
+    </div>
+    <!-- End -->
+
+    <!-- Start Parallax -->
+    <div class="container">
+        <div class="parallax">
+
+        </div>
+    </div>
+    <!-- End Parallax -->
+
+    <!--start For Kids -->
+    <div class="container">
+        <div style="margin-top:20px"></div>
+        <h2><center><i>Kids</i></center></h2>
+        <img src="{% static 'images/kids/k1.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/kids/k2.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/kids/k3.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/kids/k4.jpg'%}" style="height:250px;width: 218px">
+        <img src="{% static 'images/kids/k5.jpg'%}" style="height:250px;width: 218px">
+    </div>
+    <!-- End -->
+
+    <div class="container" style="background-color:gray">
+        <div style="margin-top:20px ; " ></div>
+        <img src="{% static 'images/pc.png'%}" style="height:350px;width: 553px">
+        <img src="{% static 'images/hp.jpg'%}" style="height:350px;width: 552px">
+        <img src="{% static 'images/laptop.jpg'%}" style="height:350px;width: 553px">
+        <img src="{% static 'images/phn.jpg'%}" style="height:350px;width: 552px">
+    </div><br>
+
+
+{% endblock %}

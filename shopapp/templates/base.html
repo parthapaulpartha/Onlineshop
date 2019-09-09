@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <title> Online Shop </title>
+
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+<body>
+
+    <!-- start navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+        {% if request.user.is_authenticated %}
+        <a class="navbar-brand" href="/onlineshop/home/">Online Shop</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                <!--<li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/home/">Home </a>
+                </li>-->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/man/">Man</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/woman/">Woman</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Kids
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                      <a class="dropdown-item" href="/onlineshop/kids_boy/">Boy</a>
+                      <a class="dropdown-item" href="/onlineshop/kids_girl/">Girl</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Electronics
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                      <a class="dropdown-item" href="/onlineshop/e_phone/">Phone</a>
+                      <a class="dropdown-item" href="/onlineshop/e_desktop/">Desktop</a>
+                      <a class="dropdown-item" href="/onlineshop/e_laptop/">Laptop</a>
+                      <a class="dropdown-item" href="/onlineshop/e_head_phone/">Head phone</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Watch
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                      <a class="dropdown-item" href="/onlineshop/w_man/">Man watch</a>
+                      <a class="dropdown-item" href="/onlineshop/w_woman/">Woman watch</a>
+                      <a class="dropdown-item" href="/onlineshop/w_kid/">kids watch</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/gift/">Gift</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/my_order/">My Order </a>
+                </li>
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/profile"><i class="fas fa-user"></i> {{ request.user }}</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/logout">Log out <i class="fas fa-sign-out-alt"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        {% else %}
+
+        <a class="navbar-brand" href="/onlineshop/home/">Online Shop</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link disabled" href="/onlineshop/man/">Man</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link disabled" href="/onlineshop/woman/">Woman</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link disabled dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Kids
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                      <a class="dropdown-item" href="/onlineshop/kids_boy/">Boy</a>
+                      <a class="dropdown-item" href="/onlineshop/kids_girl/">Girl</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link disabled dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Electronics
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
+                      <a class="dropdown-item" href="/onlineshop/e_phone/">Phone</a>
+                      <a class="dropdown-item" href="/onlineshop/e_desktop/">Desktop</a>
+                      <a class="dropdown-item" href="/onlineshop/e_laptop/">Laptop</a>
+                      <a class="dropdown-item" href="/onlineshop/e_head_phone/">Head phone</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link disabled dropdown-toggle" href="#" id="navbarDropdown6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Watch
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown6">
+                      <a class="dropdown-item" href="/onlineshop/w_man/">Man watch</a>
+                      <a class="dropdown-item" href="/onlineshop/w_woman/">Woman watch</a>
+                      <a class="dropdown-item" href="/onlineshop/w_kid/">kids watch</a>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link disabled" href="/onlineshop/gift/">Gift</a>
+                </li>
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/registration">Registration</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/onlineshop/login">Log in <i class="fas fa-sign-in-alt"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        {% endif %}
+    </nav>
+    <!-- end navbar -->
+
+    {% block body %}
+
+    {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+
+<!-- Footer -->
+<footer class = "panel-footer  bg-secondary ">
+
+  <div class=" text-center py-3">
+      <a href="/onlineshop/contact/" class="btn btn-secondary">Contact Us</a>
+      <a href="/onlineshop/about/" class="btn btn-secondary">About Us</a>
+      <a href="//www.facebook.com" class="btn btn-secondary"> Facebook</a>
+      <a href="//twitter.com" class="btn btn-secondary">Twitter</a>
+      <a href="//www.whatsapp.com" class=" btn btn-secondary">Whatsapp</a>
+  </div>
+
+</footer>
+<!-- Footer -->
+
+</html>
